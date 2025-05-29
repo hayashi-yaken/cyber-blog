@@ -1,9 +1,10 @@
-import { GlitchText } from "@/components/glitch-text"
-import { ModernBlogCard } from "@/components/modern-blog-card"
-import { ModernSidebar } from "@/components/modern-sidebar"
-import { ModernHeader } from "@/components/modern-header"
-import { FeaturedPost } from "@/components/featured-post"
-import { CyberCity } from "@/components/cyber-city"
+import { GlitchText } from "@/components/glitch-text";
+import { ModernBlogCard } from "@/components/modern-blog-card";
+import { ModernSidebar } from "@/components/modern-sidebar";
+import { ModernHeader } from "@/components/modern-header";
+import { FeaturedPost } from "@/components/featured-post";
+import { CyberCity } from "@/components/cyber-city";
+import { LoadingCat } from "@/components/loading/Loadingcat";
 
 export default function Home() {
   const featuredPost = {
@@ -15,7 +16,7 @@ export default function Home() {
     author: "ネオ・ハッカー",
     image: "/placeholder.svg?height=400&width=800",
     readTime: "5分",
-  }
+  };
 
   const posts = [
     {
@@ -45,7 +46,7 @@ export default function Home() {
       image: "/placeholder.svg?height=300&width=400",
       readTime: "4分",
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a0a1f] via-[#12123e] to-[#0a0a1f] text-white relative overflow-hidden">
@@ -53,6 +54,8 @@ export default function Home() {
       <div className="fixed inset-0 z-0">
         <CyberCity />
       </div>
+
+      <LoadingCat />
 
       {/* グリッドオーバーレイ */}
       <div className="absolute inset-0 bg-grid-overlay opacity-10 z-0"></div>
@@ -69,7 +72,10 @@ export default function Home() {
             <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-[600px] h-[200px] bg-[#EE29E8]/20 rounded-full blur-[100px] z-0"></div>
 
             <div className="relative z-10">
-              <GlitchText text="CYBER BLOG" className="text-5xl md:text-7xl font-bold mb-6" />
+              <GlitchText
+                text="CYBER BLOG"
+                className="text-5xl md:text-7xl font-bold mb-6"
+              />
               <p className="text-xl text-[#2FEBE9] max-w-2xl mx-auto leading-relaxed glow-cyan">
                 未来からの視点で現在を語る、サイバーパンクな世界へようこそ
               </p>
@@ -98,5 +104,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  )
+  );
 }

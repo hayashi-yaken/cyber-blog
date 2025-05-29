@@ -1,31 +1,31 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Clock, User } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import { Clock, User } from "lucide-react";
 
 interface Post {
-  id: number
-  title: string
-  excerpt: string
-  date: string
-  author: string
-  image: string
-  readTime: string
+  id: number;
+  title: string;
+  excerpt: string;
+  date: string;
+  author: string;
+  image: string;
+  readTime: string;
 }
 
 interface ModernBlogCardProps {
-  post: Post
+  post: Post;
 }
 
 export function ModernBlogCard({ post }: ModernBlogCardProps) {
   return (
     <Link href={`/posts/${post.id}`}>
-      <article className="group bg-[#0a0a1f]/50 backdrop-blur-xl border border-[#2FEBE9]/20 rounded-2xl overflow-hidden hover:bg-[#0a0a1f]/70 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#EE29E8]/20 glow-card">
+      <article className="group bg-[#0a0a1f]/50 backdrop-blur-xl border border-[#2FEBE9]/20 rounded-2xl overflow-hidden glow-card">
         <div className="relative h-48 overflow-hidden">
           <Image
             src={post.image || "/placeholder.svg"}
             alt={post.title}
             fill
-            className="object-cover transition-transform duration-700 group-hover:scale-110"
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a1f] via-transparent to-transparent"></div>
           <div className="absolute top-4 right-4">
@@ -51,7 +51,9 @@ export function ModernBlogCard({ post }: ModernBlogCardProps) {
             {post.title}
           </h3>
 
-          <p className="text-sm text-white/70 mb-4 line-clamp-2">{post.excerpt}</p>
+          <p className="text-sm text-white/70 mb-4 line-clamp-2">
+            {post.excerpt}
+          </p>
 
           <div className="flex justify-between items-center">
             <span className="text-xs text-[#2FEBE9]/70">{post.date}</span>
@@ -64,5 +66,5 @@ export function ModernBlogCard({ post }: ModernBlogCardProps) {
         <div className="h-1 w-full bg-gradient-to-r from-transparent via-[#2FEBE9]/50 to-transparent group-hover:via-[#EE29E8] transition-all duration-500 glow-line"></div>
       </article>
     </Link>
-  )
+  );
 }
