@@ -2112,6 +2112,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vfx-js/core@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "@vfx-js/core@npm:0.6.0"
+  dependencies:
+    three: ^0.172.0
+  checksum: 91f3c54f7685da9e28353c688df9132f1b2e18c055ebad24f41e312e7e3bb89375aca0b105ee70c9becc5610dd9537a038ae4cce491c71c84e1a5f0de241f6f0
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:^3.0.0":
   version: 3.0.1
   resolution: "abbrev@npm:3.0.1"
@@ -3284,6 +3293,7 @@ __metadata:
     "@types/node": ^22
     "@types/react": ^19
     "@types/react-dom": ^19
+    "@vfx-js/core": ^0.6.0
     autoprefixer: ^10.4.20
     class-variance-authority: ^0.7.1
     clsx: ^2.1.1
@@ -4308,6 +4318,13 @@ __metadata:
   dependencies:
     any-promise: ^1.0.0
   checksum: 84e1b804bfec49f3531215f17b4a6e50fd4397b5f7c1bccc427b9c656e1ecfb13ea79d899930184f78bc2f57285c54d9a50a590c8868f4f0cef5c1d9f898b05e
+  languageName: node
+  linkType: hard
+
+"three@npm:^0.172.0":
+  version: 0.172.0
+  resolution: "three@npm:0.172.0"
+  checksum: 2efd90e0c7701fc55440f7932673e38ec09d23ba338f035fc91f1981e1af4b3925e7a59533ebe35994404774a38f1d1c27f0cb5a2744f1ebf3df0ad962b50280
   languageName: node
   linkType: hard
 
