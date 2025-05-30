@@ -1,10 +1,9 @@
-import { GlitchText } from "@/components/glitch-text";
-import { ModernBlogCard } from "@/components/modern-blog-card";
-import { ModernSidebar } from "@/components/modern-sidebar";
-import { ModernHeader } from "@/components/modern-header";
-import { FeaturedPost } from "@/components/featured-post";
-import { CyberCity } from "@/components/cyber-city";
-import { LoadingCat } from "@/components/loading/Loadingcat";
+import { GlitchText1 } from "@/components/glitch/GlitchText1";
+import { BaseSidebar } from "@/components/sidebar/BaseSidebar";
+import { FeaturedCard } from "@/components/card/FeaturedCard";
+import { CyberBg } from "@/components/background/CyberBg";
+import { BaseCard } from "@/components/card/BaseCard";
+import { BaseHeader } from "@/components/header/BaseHeader";
 
 export default function Home() {
   const featuredPost = {
@@ -49,57 +48,52 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0a0a1f] via-[#12123e] to-[#0a0a1f] text-white relative overflow-hidden">
+    <div className='min-h-screen bg-gradient-to-b from-[#0a0a1f] via-[#12123e] to-[#0a0a1f] text-white relative overflow-hidden'>
       {/* サイバーシティの背景 */}
-      <div className="fixed inset-0 z-0">
-        <CyberCity />
+      <div className='fixed inset-0 z-0'>
+        <CyberBg />
       </div>
 
-      <LoadingCat />
-
       {/* グリッドオーバーレイ */}
-      <div className="absolute inset-0 bg-grid-overlay opacity-10 z-0"></div>
+      <div className='absolute inset-0 bg-grid-overlay opacity-10 z-0'></div>
 
       {/* スキャンライン */}
-      <div className="absolute inset-0 bg-scanlines opacity-[0.03] z-0 pointer-events-none"></div>
+      <div className='absolute inset-0 bg-scanlines opacity-[0.03] z-0 pointer-events-none'></div>
 
-      <ModernHeader />
+      <BaseHeader />
 
-      <div className="relative z-10 pt-8">
-        <div className="container mx-auto px-4 py-12">
-          <div className="text-center mb-16 relative">
+      <div className='relative z-10 pt-8'>
+        <div className='container mx-auto px-4 py-12'>
+          <div className='text-center mb-16 relative'>
             {/* ネオングロー効果 */}
-            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-[600px] h-[200px] bg-[#EE29E8]/20 rounded-full blur-[100px] z-0"></div>
+            <div className='absolute -top-20 left-1/2 transform -translate-x-1/2 w-[600px] h-[200px] bg-[#EE29E8]/20 rounded-full blur-[100px] z-0'></div>
 
-            <div className="relative z-10">
-              <GlitchText
-                text="CYBER BLOG"
-                className="text-5xl md:text-7xl font-bold mb-6"
-              />
-              <p className="text-xl text-[#2FEBE9] max-w-2xl mx-auto leading-relaxed glow-cyan">
+            <div className='relative z-10'>
+              <GlitchText1 text='CYBER BLOG' className='text-5xl md:text-7xl font-bold mb-6' />
+              <p className='text-xl text-[#2FEBE9] max-w-2xl mx-auto leading-relaxed glow-cyan'>
                 未来からの視点で現在を語る、サイバーパンクな世界へようこそ
               </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            <div className="lg:col-span-3 space-y-12">
-              <FeaturedPost post={featuredPost} />
+          <div className='grid grid-cols-1 lg:grid-cols-4 gap-8'>
+            <div className='lg:col-span-3 space-y-12'>
+              <FeaturedCard post={featuredPost} />
 
               <div>
-                <h2 className="text-2xl font-bold text-[#F0F085] mb-8 flex items-center gap-3 glow-yellow">
-                  <div className="w-1 h-8 bg-gradient-to-b from-[#EE29E8] to-[#2FEBE9] glow-bar"></div>
+                <h2 className='text-2xl font-bold text-[#F0F085] mb-8 flex items-center gap-3 glow-yellow'>
+                  <div className='w-1 h-8 bg-gradient-to-b from-[#EE29E8] to-[#2FEBE9] glow-bar'></div>
                   最新記事
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6'>
                   {posts.map((post) => (
-                    <ModernBlogCard key={post.id} post={post} />
+                    <BaseCard key={post.id} post={post} />
                   ))}
                 </div>
               </div>
             </div>
 
-            <ModernSidebar />
+            <BaseSidebar />
           </div>
         </div>
       </div>
